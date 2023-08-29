@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Configuring Demand Transference for Showroom Items</h1>
+        <p>If you have items sold in showrooms (locations where the item is sold but not fulfilled):</p>
+        <ul>
+            <li>	Ensure that the <b>Allowed Inventory Order Policies</b> system policy includes the value “<b>S</b>” for showroom.</li>
+            <li>Configure an inventory policy for the item with the following settings:<ul><li><b>Order Policy Type</b> = Showroom</li><li><b>Minimum Safety Stock Units</b> = # of items to display in showroom (for example, “1”)</li><li>Demand Transference:<ul><li><b>Designated Fulfillment Site</b>: To designate a single site as the fulfillment location for showroom sales, select this option and choose the fulfillment site.</li><li><b>Demand Transference Method</b>: If showroom orders can be fulfilled from multiple locations, select this option and choose <b>Split Factor</b>.</li></ul></li></ul></li>
+        </ul>
+    </body>
+</html>

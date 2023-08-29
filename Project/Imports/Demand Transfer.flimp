@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MsWordImport
+  PreserveSourceStyles="false"
+  KeepSourceLinks="false"
+  ConvertInlineFormatting="true"
+  AddContinuedLinks="false"
+  AddContinuedFromLinks="false"
+  ContinuedLinkFormat="(continued in {title})"
+  ContinuedFromLinkFormat="(continued from {title})"
+  UseMaxCharLimit="false"
+  UseMinCharLimit="true"
+  MaxCharLimit="10000"
+  MinCharLimit="50"
+  FilenameLength="24"
+  GeneratePageLayouts="false"
+  UseFirstHeadingAsTopicTitle="true"
+  ConvertEquations="true"
+  LastCollectTime="2019-01-16T14:24:39.8898294-08:00"
+  ProjectName="JustEnough Help Center 3.7"
+  ProjectFolder="C:\Users\Jonathan.Boswell\Documents\My Projects\JustEnough Help Center 3.7\"
+  AutoSync="false"
+  AutoFitTables="false"
+  UseHeaderRows="false"
+  LastImport="2019-01-16T14:25:43.1609978-08:00">
+  <Files>
+    <Url
+      Source="../../../../JustEnough/3.7/Demand Transfer.docx"
+      AbsoluteSource="file:///C:/Users/Jonathan.Boswell/Documents/JustEnough/3.7/Demand Transfer.docx" />
+  </Files>
+  <ExcludedFiles />
+  <CollectedSourceFiles />
+  <SkippedSourceFiles />
+  <GeneratedFiles>
+    <Url
+      Source="../../Content/Resources/Images/Demand Transfer/Demand Transfer Overview.png"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Demand Transfer/Demand Transfer Overview_1.png"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Demand Transfer/Demand Transfer Overview_2.png"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Demand Transfer/Demand Transfer Overview_3.png"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Demand Transfer/Demand Transfer Overview.htm"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Demand Transfer/Split Factor Method Overview.htm"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Demand Transfer/Demand Transfer Configuration.png"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Demand Transfer/Demand Transfer Configuration_1.png"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Demand Transfer/Demand Transfer Configuration.htm"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Demand Transfer/Setting the Consider Demand.png"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Demand Transfer/Setting the Consider Demand_1.png"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Demand Transfer/Setting the Consider Demand.htm"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../TOCs/Demand Transfer.fltoc"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/Demand Transfer.css"
+      TimeStamp="1/16/2019 2:25:28 PM" />
+  </GeneratedFiles>
+  <ParagraphStyles>
+    <Map
+      From="Heading 1"
+      To="h1" />
+    <Map
+      From="Heading 2"
+      To="h2" />
+    <Map
+      From="Heading 3"
+      To="h3" />
+    <Map
+      From="Heading 4"
+      To="h4.Heading 4" />
+  </ParagraphStyles>
+  <CharacterStyles>
+    <Map
+      From="Hyperlink"
+      To="a.(MS Word Style)" />
+  </CharacterStyles>
+  <NewTopicStyles>
+    <StyleName
+      Name="Heading 1" />
+  </NewTopicStyles>
+  <UsedParagraphStyles>
+    <StyleName
+      Name="Heading 1" />
+    <StyleName
+      Name="Heading 2" />
+    <StyleName
+      Name="Heading 3" />
+    <StyleName
+      Name="List Paragraph" />
+  </UsedParagraphStyles>
+  <UsedCharacterStyles>
+    <StyleName
+      Name="Hyperlink" />
+  </UsedCharacterStyles>
+</MsWordImport>

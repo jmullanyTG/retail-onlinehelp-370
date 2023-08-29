@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RecentLinks>
+    <Dialog Name="B3.XmlMdiEditorKit.ImageGeneralDialogPage">
+        <Link Value="C:\Users\Jonathan.Boswell\Documents\My Projects\JustEnough Help Center 3.7\Content\Resources\Images\Matrix.png" />
+    </Dialog>
+    <Dialog Name="B3.XmlTextKit.InsertHyperlinkDialog">
+        <Link Value="C:\Users\Jonathan.Boswell\Documents\My Projects\JustEnough Help Center 3.7\Content\Topics\Demand Transfer\Split Factor Method Overview.htm" />
+    </Dialog>
+    <Dialog Name="B3.XmlTextKit.MultimediaGeneralDialogPage">
+        <Link Value="C:\Users\Jonathan.Boswell\Documents\My Projects\Just Enough Help Center 3.6.2\Content\Resources\Videos\BC-4 CD-9 Forecast Exception Management_ActionRequired_AdjustForecast.mp4" />
+    </Dialog>
+    <Dialog Name="B3.XmlTextKit.InsertCrossReferenceDialog">
+        <Link Value="C:\Users\Jonathan.Boswell\Documents\My Projects\Just Enough Help Center 3.6.2\Content\Topics\Supply Chain\Supply Chain Overview.htm" />
+    </Dialog>
+</RecentLinks>

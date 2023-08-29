@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Topics/_Print Topics/Title Page.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    BreakType="pageLayout"
+    PageType="title"
+    AutoEndOnLeftPage="disabled"
+    conditions="General.Printed Manuals"
+    StartSection="false"
+    PageLayout="/Content/Resources/PageLayouts/Title.flpgl" />
+  <TocEntry
+    Title="Workflow State Manager Overview"
+    Link="/Content/Topics/Workflow State Manager/Workflow State Manager Overview.htm"
+    BreakType="pageLayout"
+    AutoEndOnLeftPage="disabled"
+    StartSection="false"
+    PageLayout="/Content/Resources/PageLayouts/Default.flpgl">
+    <TocEntry
+      Title="Workflow State Manager Configuration"
+      Link="/Content/Topics/Workflow State Manager/Workflow State Manager Configuration.htm" />
+    <TocEntry
+      Title="Workflow State Manager User Rights"
+      Link="/Content/Topics/Workflow State Manager/Workflow State Manager User Rights.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Standardized Jobs"
+    Link="/Content/Topics/Workflow State Manager/Standardized Jobs.htm">
+    <TocEntry
+      Title="Workflow - Heartbeat"
+      Link="/Content/Topics/Workflow State Manager/Workflow Heartbeat.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Workflow State Management Home Screen"
+    Link="/Content/Topics/Workflow State Manager/Workflow State Management Home Screen.htm">
+    <TocEntry
+      Title="Workflow"
+      Link="/Content/Topics/Workflow State Manager/Workflow.htm">
+      <TocEntry
+        Title="Create a Workflow"
+        Link="/Content/Topics/Workflow State Manager/Create a Workflow.htm" />
+      <TocEntry
+        Title="Modify a Workflow"
+        Link="/Content/Topics/Workflow State Manager/Modify a Workflow.htm" />
+      <TocEntry
+        Title="Deactivate a Workflow"
+        Link="/Content/Topics/Workflow State Manager/Deactivate a Workflow.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Workflow Statuses"
+      Link="/Content/Topics/Workflow State Manager/Workflow Statuses.htm">
+      <TocEntry
+        Title="Create a Status"
+        Link="/Content/Topics/Workflow State Manager/Create a Status.htm" />
+      <TocEntry
+        Title="Modify a Status"
+        Link="/Content/Topics/Workflow State Manager/Modify a Status.htm" />
+      <TocEntry
+        Title="Delete a Status"
+        Link="/Content/Topics/Workflow State Manager/Delete a Status.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Permissions by Status (State)"
+      Link="/Content/Topics/Workflow State Manager/Permissions by Status State.htm">
+      <TocEntry
+        Title="Event Status States"
+        Link="/Content/Topics/Workflow State Manager/Event Status States.htm" />
+      <TocEntry
+        Title="Price Action Status States"
+        Link="/Content/Topics/Workflow State Manager/Price Action Status States.htm"></TocEntry>
+      <TocEntry
+        Title="Promotion Status States"
+        Link="/Content/Topics/Workflow State Manager/Promotion Status States.htm" />
+      <TocEntry
+        Title="Order Header Status States"
+        Link="/Content/Topics/Workflow State Manager/Order Header Status States.htm" />
+      <TocEntry
+        Title="Restrict User/Role Permissions"
+        Link="/Content/Topics/Workflow State Manager/Restrict User Role Permissions.htm" />
+      <TocEntry
+        Title="Modify Permissions"
+        Link="/Content/Topics/Workflow State Manager/Modify Permissions.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Status Transitions"
+      Link="/Content/Topics/Workflow State Manager/Status Transitions.htm">
+      <TocEntry
+        Title="Create a Transition"
+        Link="/Content/Topics/Workflow State Manager/Create a Transition.htm" />
+      <TocEntry
+        Title="Modify a Transition"
+        Link="/Content/Topics/Workflow State Manager/Modify a Transition.htm" />
+      <TocEntry
+        Title="Delete a Transition"
+        Link="/Content/Topics/Workflow State Manager/Delete a Transition.htm" />
+    </TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="Workflow State Manager Help"
+    Link="/Content/Topics/Workflow State Manager/Workflow State Manager Help.htm" />
+</CatapultToc>

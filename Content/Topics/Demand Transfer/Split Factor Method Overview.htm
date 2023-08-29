@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us">
+    <head>
+        <link href="../../Resources/TableStyles/jeTables.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+    </head>
+    <body style="text-align: left;">
+        <h1><a name="_Split_Factors_Overview"></a>Split Factor Method Overview</h1>
+        <p>Split factors are a method of calculating <a href="Demand Transfer Overview.htm#What">fulfillment demand</a>.</p>
+        <p>A split factor is simply the percentage of a location’s historical sales that were fulfilled at a given location. For example, if Store A fulfilled 100% of its past sales (meaning all items bought from Store A were fulfilled by Store A), the split factor for Store A sales would be Store A = 100%.</p>
+        <p>If Store A only fulfilled 90% of its past sales and the remaining 10% of sales was fulfilled at Store B, the split factors for Store A's sales would be: Store A = 90%,  Store B = 10%.</p>
+        <p>Split factors must be calculated for all locations in which an item is sold. This gives Demand Management a complete history of where sales at each location were fulfilled. This fulfillment history, captured as split factors, can then be applied to each location's sales forecasts. The result is a forecast for future fulfillment demand at each location.</p>
+        <p>In Store A's case, if 10% of its sales are expected to be fulfilled by Store B, then replenishment orders for both stores need to be modified accordingly. Otherwise, Store A may end up being overstocked while Store B may experience "unexpected" stockouts after fulfilling demand from its own sales as well as demand transferred from Store A sales. </p>
+        <h2>Calculating split factors</h2>
+        <p>The calculation used to determine a split factor is:</p>
+        <p><![CDATA[  ]]><b># of Units sold at [Sales Location] that were fulfilled at [Fulfillment Location] / <br /># of Units sold at [Sales Location]</b></p>
+        <h3><a name="Example:"></a>Example: Buy Online, Pickup In Store (BOPIS)</h3>
+        <p>Consider an E-Commerce site which gives customers the choice of picking up items from their local store or having the item shipped to their home. In such a scenario, all sales are credited to the E-Commerce site, but fulfillment of sales will be split among multiple locations based on customer choices. If a customer chooses to pick up the item in a store, fulfillment is transferred to the pickup store. If they choose to ship it to their home, fulfilment stays at the E-Commerce location. </p>
+        <p>In the following example, there were 100 sales of Men’s Canvas High Tops (Black / Size 10) credited to the E-Commerce location during Period 1. Of these 100 sales, 75 were fulfilled from the E-Commerce site (“Ship to Home”) and 25 were fulfilled at stores.</p>
+        <table style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/TableStyles/jeTables.css');" class="TableStyle-jeTables" cellspacing="0">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 298px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 1138px;" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1" colspan="2" style="text-align: left;">Location: E-Commerce</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;">Product</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1">Men’s Canvas High Tops (Black / Size 10)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;">Period</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2">1</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1" style="font-weight: bold;">Total Sales (Units)</td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1">100</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        </br>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/jeTables.css');" class="TableStyle-jeTables" cellspacing="0">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 240px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 15%;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 30%;" />
+            <col class="TableStyle-jeTables-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1" style="text-align: left;">
+                       Customer Fulfillment Choice
+                    </th>
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1" style="text-align: left;">
+                        Units
+                    </th>
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1" style="text-align: left;">
+                        Split Factor
+                    </th>
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1" style="text-align: left;">Split Factor Calculation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;">
+                        <p>Ship to Home</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">
+                        <p>75</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">
+                        <p>75%&#160;&#160;&#160; </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1">((75/100) * 100)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;">
+                        <p>Pick up in Store 73</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">
+                        <p>10</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">
+                        <p>10%&#160;&#160;&#160;</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2"> ((10/100) * 100)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;">
+                        <p>Pick up in Store 241</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">
+                        <p>6</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">
+                        <p>6%&#160;&#160;&#160; </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1">((6/100) * 100)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;">
+                        <p>Pickup in Store 405</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">
+                        <p>9</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">
+                        <p>9%&#160;&#160;&#160; </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2">((9/100) * 100)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1" style="font-weight: bold;">
+                        <p>Total </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1">
+                        <p>100</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1">
+                        <p>100%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1">&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>In the Split Factor column, the split factor for each location is the percentage of items sold on E-Commerce that were fulfilled at that location.&#160; For example, Store 73 fulfilled 10 of the 100 E-Commerce orders made for Men’s Canvas High Tops (Black / Size 10) in Period 1, so its split factor is 10%.</p>
+        <h3><a name="Example:2"></a>Example: Buy In Store, Ship From Store (BISSFS)</h3>
+        <p>Now, consider sales of Men’s Canvas High Tops (Black / Size 10) during that same period but at a different location (Store 73). In the following example, most items sold at Store 73 were fulfilled at Store 73. However, some customers chose to pick up their items at a different store (Store 405). One customer bought an item in the store and chose to have it shipped to their home. Although the item was bought at Store 73, the Order Management System determined the item should be shipped from Store 241.</p>
+        <table style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/TableStyles/jeTables.css');" class="TableStyle-jeTables" cellspacing="0">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 386px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 1050px;" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1" colspan="2">Location: Store 73</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;">Product</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1">Men’s Canvas High Tops (Black / Size 10)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;">Period</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2">1</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1" style="font-weight: bold;">Total Sales (Units)</td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1">20</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        </br>
+        <table style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/TableStyles/jeTables.css');" class="TableStyle-jeTables" cellspacing="0">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 240px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 15%;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 30%;" />
+            <col class="TableStyle-jeTables-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1" style="text-align: left;">
+                        Customer Fulfillment Choice
+                    </th>
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1" style="text-align: left;">
+                        Units
+                    </th>
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1" style="text-align: left;">
+                        Split Factor &#160;
+                    </th>
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1" style="text-align: left;">Split Factor Calculation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;text-align: left;">
+                        <p>Pickup in Store 73</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="text-align: left;">
+                        <p>17</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="text-align: left;">
+                        <p>85%&#160;&#160;&#160; </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="text-align: left;">((17/20) * 100)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;text-align: left;">
+                        <p>Ship to Home From Store 241</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="text-align: left;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="text-align: left;">
+                        <p>5%&#160;&#160;&#160; </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2" style="text-align: left;"> ((1/20) * 100)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;text-align: left;">
+                        <p>Pickup in Store 405</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="text-align: left;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="text-align: left;">
+                        <p>10%&#160;&#160;&#160; </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="text-align: left;">((2/20) * 100)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body2" style="font-weight: bold;text-align: left;">
+                        <p>Total </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body2" style="text-align: left;">
+                        <p>20</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body2" style="text-align: left;">
+                        <p>100%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body2" style="text-align: left;">&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>In this manner, split factors can be calculated for all locations. </p>
+        <p>Once split factors have been calculated from sales at all locations (E-Commerce, Store 73, Store 241, Store 405), JustEnough uses them to forecast fulfillment demand for each location.</p>
+        <h2>Applying split factors</h2>
+        <p>To calculate how much stock on hand is needed to handle a location’s anticipated demand, JustEnough applies the split factors calculated from each location’s sales history to each location’s sales demand forecast. For example, say JustEnough creates a sales forecast for the next 90 days (Period 2) based on sales from the previous 90 days (Period 1). To then calculate anticipated fulfillment demand at each location, JustEnough:</p>
+        <ul style="list-style-type: disc;margin-left: 38pt;">
+            <li style="list-style-type: disc;">Calculates split factors for each location based on Period 1 fulfillment splits (see <a href="#Example:">Examples</a> above).</li>
+            <li style="list-style-type: disc;">Applies the Period 1 split factors to the Period 2 sales forecasts (see <a href="#_Examples"><span class="Hyperlink">Examples</span></a> below). </li>
+            <li style="list-style-type: disc;">Sums up the split factor results for each location from across all locations (see <a href="#_Examples"><span class="Hyperlink">Examples</span></a> below).</li>
+        </ul>
+        <h3><a name="_Examples"></a>Examples</h3>
+        <h4>E-Commerce</h4>
+        <p>In the following example, JustEnough forecasts that the E-Commerce location will sell 120 Men’s Canvas High Tops (Black / Size 10) in period 2. It then applies the split factors calculated for each fulfillment location from Period 1 (see  <a href="#Example:">example</a> above), to find out where the demand for those 120 sales is expected to be fulfilled.&#160; </p>
+        <table style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/TableStyles/jeTables.css');" class="TableStyle-jeTables" cellspacing="0">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 399px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 1037px;" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1" colspan="2">Location: E-Commerce</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;">Product</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1">Men’s Canvas High Tops (Black / Size 10)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;">Period</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2">2</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1" style="font-weight: bold;">Forecasted Sales </td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1"><span style="color: #0000ff;">120</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        </br>
+        <table style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/TableStyles/jeTables.css');" class="TableStyle-jeTables" cellspacing="0">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 180px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 35%;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 15%;" />
+            <col class="TableStyle-jeTables-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1">
+                        Fulfillment Location
+                    </th>
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1">
+                        Split Factor %
+                    </th>
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1">Calculation</th>
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1">
+                        Period 2 Fulfillment Forecast
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;">
+                        <p>E-Commerce</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">
+                        <p>75%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">
+                        <p>(<span style="color: #0000ff;">120 </span>* .75)</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="font-weight: bold;">
+                        <p>90&#160;&#160;&#160;&#160;&#160;&#160; </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;">
+                        <p>Store 73 </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">
+                        <p>10%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">
+                        <p>(<span style="color: #0000ff;">120 </span>* .10)</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2" style="font-weight: bold;">
+                        <p><a name="12"></a>12&#160;&#160;&#160;&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;">
+                        <p>Store 241</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">
+                        <p>6%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1"> (<span style="color: #0000ff;">120 </span>*.06)</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="font-weight: bold;">
+                        <p>7.2&#160;&#160;&#160;&#160;&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;">
+                        <p>Store 405</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">
+                        <p>9%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2"> (<span style="color: #0000ff;">120 </span>* .09)</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2" style="font-weight: bold;">
+                        <p>10.8&#160;&#160;&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1" style="font-weight: bold;">
+                        <p>Total </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1">
+                        <p>100%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1" style="font-weight: bold;">
+                        <p>120.00</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>In this example, we see that the split factor for Store 73 is 10%, meaning that 10% of all sales from the E-Commerce site during Period 2 is anticipated to be fulfilled at Store 73. Since 120 sales are forecasted from the E-Commerce site for period 2, this means that Store 73 should anticipate demand for 12 additional pairs of Men’s Canvas High Tops (Black / Size 10) coming from E-Commerce sales during period 2.</p>
+        <h4>Store 73</h4>
+        <p>Now let’s look at the Period 2 sales forecast for Store 73.</p>
+        <p>Let’s assume that the JustEnough sales forecast for Men’s Canvas High Tops (Black / Size 10) says Store 73 will sell 22 units during period 2. Based on the split factors calculated from period 1 sales at Store 73 (s see <a href="#Example:2"><span class="Hyperlink">example</span></a> above), we know that most of these sales will also be fulfilled at Store 73. </p>
+        <p>By applying the split factors calculated from all period 1 sales at Store 73, we can see how fulfillment of Store 73 sales during period 2 breaks out across locations.</p>
+        <table style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/TableStyles/jeTables.css');" class="TableStyle-jeTables" cellspacing="0">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 421px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 1015px;" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1" colspan="2" style="text-align: left;">Location: Store 73</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;text-align: left;">Product</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="text-align: left;">Men’s Canvas High Tops (Black / Size 10)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;text-align: left;">Period</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2" style="text-align: left;">2</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1" style="font-weight: bold;text-align: left;">Forecasted Sales </td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1" style="text-align: left;"><span style="color: #0000ff;">22</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        </br>
+        <table style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/TableStyles/jeTables.css');" class="TableStyle-jeTables" cellspacing="0">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 180px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 35%;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 15%;" />
+            <col class="TableStyle-jeTables-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1" style="text-align: left;">
+                        Fulfillment Location
+                    </th>
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1" style="text-align: left;">
+                        Split Factor %
+                    </th>
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1" style="text-align: left;">Calculation</th>
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1" style="text-align: left;">
+                        Period 2 Fulfillment Forecast
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;">
+                        <p>E-Commerce</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">
+                        <p>0%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">(<span style="color: #0000ff;">22 </span>* 0)</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="font-weight: bold;">0</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;">
+                        <p>Store 73 </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">
+                        <p>85%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">(<span style="color: #0000ff;">22 </span>* .85)</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2" style="font-weight: bold;"><a name="15.4"></a>18.7</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;">
+                        <p>Store 241</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">
+                        <p>10%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">(<span style="color: #0000ff;">22 </span>* .1)</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="font-weight: bold;">2.2</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;">
+                        <p>Store 405</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">
+                        <p>5%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2"><span style="color: #0000ff;">(22 </span>*.05)</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2" style="font-weight: bold;">1.1</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1" style="font-weight: bold;">
+                        <p>Total </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1">
+                        <p>100%</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1" style="font-weight: bold;">
+                        <p>22.0</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Now let’s assume that split factors were calculated for the remaining stores (Store 241 and Store 405). With split factors calculated for all locations, we can see the total forecasted fulfillment demand for each location during period 2. The fulfillment forecast for Store 73 is shown below.</p>
+        <table style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/TableStyles/jeTables.css');" class="TableStyle-jeTables" cellspacing="0">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 386px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 614px;" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1" colspan="2" style="text-align: left;">Location: Store 73</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;text-align: left;">Product</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="text-align: left;">Men’s Canvas High Tops (Black / Size 10)</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;text-align: left;">Period</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2" style="text-align: left;">2</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1" style="font-weight: bold;text-align: left;">Forecasted Fulfillments</td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1" style="text-align: left;"><span style="color: #483d8b; font-weight: bold;">31</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        </br>
+        <table style="margin-left: 0;margin-right: auto;width: 100%;mc-table-style: url('../../Resources/TableStyles/jeTables.css');" class="TableStyle-jeTables" cellspacing="0">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 193px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 807px;" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1" style="text-align: left;">
+                        <p>Sold From</p>
+                    </th>
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1" style="text-align: left;">
+                        <p>Fulfillment Forecast </p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;text-align: left;">
+                        <p>E-Commerce</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="text-align: left;">
+                        <p><a href="#12">12</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;text-align: left;">
+                        <p>Store 73</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2" style="text-align: left;">
+                        <p><a href="#15.4">18.7</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1" style="font-weight: bold;text-align: left;">
+                        <p>Store 241</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="text-align: left;">
+                        <p>0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2" style="font-weight: bold;text-align: left;">
+                        <p>Store 405</p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2" style="text-align: left;">
+                        <p>0.3</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1" style="font-weight: bold;text-align: left;">
+                        <p>Total </p>
+                    </td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1" style="text-align: left;">
+                        <p><span style="color: #483d8b; font-weight: bold;">31</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Here we see that the forecasted demand for Men’s Canvas High Tops (Black / Size 10) at Store 73 includes fulfillment of sales from 2 other locations (E-Commerce and Store 405) in addition to sales occurring at Store 73 itself. (You can see how the E-Commerce fulfillments were split to Store 73 in the E-Commerce sales forecast example above.)</p>
+        <p>Compare the total forecasted sales at Store 73 (22 units) with its forecasted demand (31 units). </p>
+        <p>Relying on sales demand alone to calculate replenishment needs would result in Store 73 being potentially understocked by 9 units during period 2!</p>
+        <h2>Enabling split factors in replenishment strategies</h2>
+        <p>You can configure JustEnough to use split factors when calculating an item’s replenishment strategy. See <a href="Demand Transfer Configuration.htm#_Demand_Transfer_Configuration"><span class="Hyperlink">Demand Transfer Configuration</span></a> for details.</p>
+    </body>
+</html>

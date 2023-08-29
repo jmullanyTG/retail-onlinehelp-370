@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us">
+    <head><title></title>
+    </head>
+    <body>
+        <h1 >Global Site Priority</h1>
+        <p>Global site priority and priority group settings will alter the way in which the replenishment and allocations ordering engines prioritize stock distribution. The Replenish Engine ostensibly operates in two separate modes based on whether or not any values are present within priority group fields for any site. </p>
+        <h3 >Site Prioritization Logic</h3>
+        <p>In a constrained DC stock situation, with more than one store requesting stock:</p>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li class="ListParagraph" style="list-style-type: disc;">If priority groups are not present (meaning that the values are NULL, not set to 0) the stores are prioritized by their global site priority on a day-by-day basis when their stock requests are fulfilled. </li>
+            <li class="ListParagraph" style="list-style-type: disc;">If priority groups are present, stores are grouped by their respective priority group value, then ordered by the requested demand quantity on a day-by-day basis when their stock requests are fulfilled.</li>
+            <li class="ListParagraph" style="list-style-type: disc;">If all stores are within a single priority group, they are ordered by the requested demand quantity on a day-by-day basis when their stock requests are fulfilled. This can be used to create a “demand prioritization” version of the Replenish Engine. </li>
+        </ul>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

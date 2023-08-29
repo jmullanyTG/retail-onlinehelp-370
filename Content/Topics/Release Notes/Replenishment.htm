@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Replenishment</h1>
+        <p>The following enhancements have been made to the JustEnough replenishment process.</p>
+        <h2>Fulfillment-based replenishment</h2>
+        <p>You now have the option of choosing whether to replenish items at a location based on the <i>fulfillment</i> forecast for items at that location instead of the sales forecast for items at that location.</p>
+        <h3>Overview</h3>
+        <p>Traditionally, JustEnough generated demand forecasts based on an item's sales history at a location. These sales-based forecasts were used to project future stock on hand at your locations and generate replenishment orders to meet the anticipated sales demand at each location. However, as new fulfillment options such as Buy Online, Pickup In Store (BOPIS) increase in popularity, the amount of inventory leaving a location is becoming less tied to sales made at that location. Fulfillment forecasts address this shift by analyzing the amount of items <u>fulfilled</u> at a given location rather than just the amount of items <u>sold</u> at that location. These fulfillment-based forecasts project future stock on hand at your locations based on historic fulfillment patterns, and replenishment orders are then placed to meet this anticipated fulfillment demand. </p>
+        <h3>JustEnough 3.7 enhancements</h3>
+        <p>The following areas of JustEnough have been enhanced to support fulfillment-based replenishment. Additional enhancements are expected in future releases.</p>
+        <ul>
+            <li>
+                <p><a name="Item"></a><b>Item Manager</b> - a new metadata field, Consider Demand Transference, has been added. When checked for an item, replenishment orders for the item will be based on fulfillment demand. When not checked, replenishment orders for the item will be based on sales demand.</p>
+                <p>
+                    <img src="../../Resources/Images/Item Manager/Consider Demand Transferance.png" />
+                </p>
+            </li>
+            <li>
+                <p><b>System Policies</b> - The system policy, Allowed Inventory Order Policies, has been enhanced with a new value, S, for showrooms. This new value must be set in order for the new Showroom policy type to be available to inventory policies. </p>
+                <p>
+                    <img src="../../Resources/Images/Policy/Sys Policy Allow Inv order policies.png" />
+                </p>
+            </li>
+            <li><b>Inventory Policy</b> - A new order policy type, Showroom, has been added to replenish items sold from showrooms. In a typical showroom scenario, sales made at the showroom are fulfilled elsewhere and the inventory at the showroom site is kept to a minimum. When a showroom policy is in effect, JustEnough credits the showroom site for its sales but automatically transfers demand away from the showroom site. This prevents JustEnough from replenishing the showroom based on how many sales are made at the showroom.<ul><li>When Showroom is selected as the order policy type, the following new Demand Transference options appear:<ul><li>Designate Fulfillment Site - If you fulfill showroom orders from a single designated store, select this option and choose the fulfillment store. (A designated fulfillment site cannot be a DC.) Demand generated from the showroom's sales will be transferred automatically to the fulfillment store.</li><li><p>Demand Transference Method - If multiple locations are used to fulfill showroom orders, select this option and choose Split Factor. Demand generated from the showroom's sales will be transferred to other locations based on JustEnough's split factor method. (Requires <a href="#Item">Consider Demand Transference</a> to be selected for an item.)</p><p class="Header-Footer-Text"><img src="../../Resources/Images/Policy/Showroom.png" /></p></li><li>When Showroom is selected, the Minimum Safety Stock Units value represents the number of units to keep at the showroom (for display, etc.). The Safety Stock Days value is explicitly ignored.</li></ul></li></ul></li>
+            <li><b>Split Factor method </b>- This method for generating fulfillment forecasts uses split factors (the percentage of a location's sales that were fulfilled at a different location) to calculate anticipated fulfillment demand for an item at a location. </li>
+        </ul>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

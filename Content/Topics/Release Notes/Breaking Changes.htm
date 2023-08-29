@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Breaking Changes</h1>
+        <h2>Allocation</h2>
+        <p>Updates to the curve mapping process (usp_Curve_Common_MapCurveFactorsToDateSeries) will necessitate examination of any custom code and any pre-existing curves.</p>
+        <h2>Database</h2>
+        <p>Introduction of a cleanup process for the “temp” schema will necessitate examination of any custom code which references objects within that schema.</p>
+        <h2>Engine</h2>
+        <p>Multiple changes to the general processing architecture within JustEnough will necessitate review of all engine/system mapping related system policy values. Please consult the updated architecture documentation and installation/upgrade guides for additional exposition.</p>
+        <h2>Event Manager</h2>
+        <p>If upgrading from v3.6.2.6 or earlier, the Event Manager module will automatically migrate event slot sets, templates and display format configurations to be compliant with the new <a href="Event Manager.htm">Event Slot Set Template</a> control. The number of conversions will determine the amount of time to complete. DO NOT close the application or interrupt this process.</p>
+        <h2>Financial Planning</h2>
+        <p>Adjustments made to plan initialization procedures related to historical inventory valuation will necessitate any production instances which have inventory archive imports set up to examine the shape of data within the historical inventory import.</p>
+        <ul>
+            <li>	If the import is set to match the data specification (including Total Cost / Total Revenue in the import) no change is required in import structure, but adjustments must be made to the data to divide by Units so that data is stored as Per Unit cost.</li>
+            <li>If the import is set to take in Per Unit values, adjustments must be made to the import to specify that the values coming in are already at the unit level with the new parameter.</li>
+        </ul>
+        <p>Due to a change related to disallowing negative values in snapshot start and end dates, snapshot logic may be altered in an unexpected way if any of those values needed to be negative in any custom implementations.</p>
+        <h2>Order Manager</h2>
+        <p>With the introduction of the logistics instruction field, any custom code which references or calls OrderManager.Order_OrderHeader_AddUpdate will need to be reviewed.</p>
+        <p>&#160;</p>
+    </body>
+</html>

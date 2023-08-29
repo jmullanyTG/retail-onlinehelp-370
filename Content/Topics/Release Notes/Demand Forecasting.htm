@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Demand Forecasting</h1>
+        <p>The following enhancements are now available in the Demand Forecasting module. </p>
+        <h2><a name="Shape"></a>Shape Forecasting</h2>
+        <p>A new forecasting method, Shape Forecasting, applies a pre-selected curve to an item's moving-average sales history to generate a moving-average based, season-affected demand forecast for that item.</p>
+        <p>The Shape Forecasting method appears in the Forecast task dialog box and participates in the forecast tournament when selected. </p>
+        <p>
+            <img src="../../Resources/Images/Demand Forecasting/Shape Forecasting Method.png" />
+        </p>
+        <p>This method requires the following setup tasks. </p>
+        <ul>
+            <li>Define appropriate curves in the Curves module.</li>
+            <li>Identify the desired curve for each item in the new Shape Forecast Maintenance view.</li>
+        </ul>
+        <h3>Shape Forecast Maintenance View</h3>
+        <p>The Shape Forecasting Maintenance view  is where you identify the curve that JustEnough should use to generate an item's shape forecast.</p>
+        <ol>
+            <li>
+                <p>In the Views module, open the Shape Forecast Maintenance view.</p>
+                <p>
+                    <img src="../../Resources/Images/Demand Forecasting/Shape Forecasting Maintenance View.png" />
+                </p>
+            </li>
+            <li>
+                <p>In the <b>Filter</b> list, choose the filter containing your desired item(s). The items appear in two grids. The top grid lists items at sites. The bottom grid lists items by channel. (The same items appear in both grids.)</p>
+            </li>
+            <li>
+                <p>To define an item's curve, select the item in a grid and click in its <b>Curve</b> cell to display the "<b>...</b>" button. Click the "<b>...</b>"  button to open the Curve Selection dialog box.</p>
+                <p>
+                    <img src="../../Resources/Images/Demand Forecasting/Curve button.png" />
+                </p>
+            </li>
+            <li>
+                <p>In the Curve Selection dialog box, choose the curve you want to apply by selecting its row in the grid and clicking <b>OK</b>.</p>
+                <p>
+                    <img src="../../Resources/Images/Demand Forecasting/Curve Selection dialog.png" />
+                </p>
+            </li>
+            <li>
+                <p>Click <b>Save</b> above the grid to save the change.</p>
+                <p>
+                    <img src="../../Resources/Images/Demand Forecasting/Curve save.png" />
+                </p>
+            </li>
+            <li>
+                <p>Repeat steps 2-5 for all desired items.</p>
+                <p>The next time that JustEnough generates demand forecasts for these items, it will use these curves to create their shape forecasts. </p>
+            </li>
+        </ol>
+        <h2>New Error Method: Absolute Total Error (ATE) <span style="color: #e16f20;"> <span style="color: #ffffff; background-color: #e16f20;"> BETA&#160;FEATURE </span></span></h2>
+        <p>A new method for calculating method fit is now available as a beta feature. This method, Absolute Total Error (ATE), produces comparable-to-superior forecasts to the current error method, MAPE, in nearly all scenarios tested by JustEnough data scientists, including long-term products, high-sales products, low-sales products, intermittent-sales products, highly seasonal products, and products with strong trends. </p>
+        <p>Although this new method is recommend by JustEnough data scientists, caution is urged before using it in production environments. We encourage you to use ATE&#160;in your non-production environments first to understand its differences to and advantages over MAPE, and contact us if any issues arise.</p>
+        <p>To set ATE as the error method used by your JustEnough application, a new system policy, <a href=" System Policies.htm">Forecast Error Method</a>, has been added. Enter 'ATE' as the new policy value to start using it as the error method for all forecasts going forward. (As it is a system-wide policy, there is no way to use MAPE for some forecasts and ATE&#160;for others without manually switching the policy value each time.)</p>
+        <p>For reference, the Error Method property in a forecast's Details pane indicates which error method was used when generating the forecast.</p>
+        <p>
+            <img src="../../Resources/Images/Demand Forecasting/Error Method detail.png" />
+        </p>
+        <p>For technical details related to ATE, including its calculation, comparison to MAPE, case studies, and examples, see <a href="../Demand Forecasting/Error Method Overview.htm">Error Method Overview</a>.</p>
+        <h2>Method Fit column added to Item list</h2>
+        <p>When selecting an item in the drop-down Item list, you can now see, sort, and filter by the method fit  of the method chosen for the item's forecast.</p>
+        <p>
+            <img src="../../Resources/Images/Demand Forecasting/Method fit RN.png" />
+        </p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

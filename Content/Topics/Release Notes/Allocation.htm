@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../../Resources/TableStyles/jeTables.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Allocation</h1>
+        <p>The following enhancements are now available in the Allocation module. </p>
+        <h2>Enhanced size curve validation</h2>
+        <p>You can set up pass/fail tests to ensure each of your sites had enough qualified data left over after data cleansing to calculate a valid size curve. These tests are based on user-defined thresholds that measure variants, sales units, and sizes at a site within the item filter selected for the size curve.</p>
+        <p>Validations are conducted on the current size curve calculated for each site (the validation process itself does not recalculate curves). Results for each site are displayed in the Size Curves grid.</p>
+        <p>
+            <img src="../../Resources/Images/Allocation Size/Validation Results.png">
+            </img>
+        </p>
+        <p>For more information, see <a href="../Allocations/Size Curves/Validating Size Curves.htm">Validating Enhanced Size Curves</a> in the Allocations online help.</p>
+        <h2>Option to skip retrend calculations for strategy lines that do not use retrend forecasts</h2>
+        <p>To improve performance, you can now  skip running retrend calculations for strategy lines that doe not use retrend forecasts. This requires two steps:</p>
+        <ol>
+            <li>Change the setting of the new <a href="System Policies.htm">Always Run Retrend Calculation</a> system policy to <b>False</b>. (It is set to True by default).</li>
+            <li>In the <a href="../Allocations/Allocation Strategy_1.htm">Allocation Strategy screen</a>, make sure that the Use Re-Trend column is "unchecked" for each strategy line that is not using retrend forecasts.</li>
+        </ol>
+        <p><b>Note</b>: Retrend forecasts will always be calculated for strategy lines whose Use Re-Trend column is checked/selected.</p>
+        <h2>Aged Inventory priority option for product groups now ranks by last receipt date</h2>
+        <p>In the Product Groups screen, the Group Allocation priority option, Aged Inventory, used to rank products by the date they were first stocked (FirstStockedDate in tbl_Inventory). In order to better identify truly stagnant items, Aged Inventory now ranks products by their last receipt date (LastReceiptDate in tblInventory). </p>
+        <p><b><b>Note</b></b>: If a LastReceiptDate value is NULL, JustEnough falls back to using FirstStockedDate.</p>
+        <h2>New Re-Trend Method column in Allocation Strategy grid</h2>
+        <p>A new column in the <a href="../Allocations/Allocation Strategy_1.htm">Allocation Strategy</a> grid lets you choose the method for obtaining a strategy line's retrend forecast.</p>
+        <table class="TableStyle-jeTables" cellspacing="0" style="mc-table-style: url('../../Resources/TableStyles/jeTables.css');width: 100%;">
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 259px;" />
+            <col class="TableStyle-jeTables-Column-Column1" style="width: 886px;" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1">
+                        <p style="margin-bottom: 0pt;font-weight: bold;color: #FFFFFF;">Column Name</p>
+                    </th>
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1">
+                        <p style="margin-bottom: 0pt;font-weight: bold;color: #FFFFFF;">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1">Re-Trend Method</td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1">
+                        <p>The type of retrend forecast used for this strategy line. Options are:</p>
+                        <ul>
+                            <li><b>Default</b> - Uses the option set in the Default Forecast Retrend Method To Use system policy.</li>
+                            <li><b>PID</b> - Use the standard retrend calculation to create a retrend forecast.</li>
+                            <li> <b>Monte Carlo</b> - Use the <a href="../Allocations/Monte Carlo/Monte Carlo Re Trend Overview.htm">Monte Carlo</a> retrend method to create a retrend forecast
+                            </li>
+                            <li><b>Demand Forecast</b> - Use a generated inventory-level demand forecast as the retrend forecast. Requires the <a href="../Demand Forecasting/Demand Forecasting Overview.htm">Demand Forecasting</a> module and an existing demand forecast. (Demand forecasts are not generated as part of Allocation execution.)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For example, customers with both the Allocation and Demand Forecasting modules can now get moving-average based, season-affected demand signals for allocations by:</p>
+        <ol>
+            <li>Using <a href="Demand Forecasting.htm#Shape">shape forecasts</a> to generate  demand forecasts.</li>
+            <li>Setting the Re-Trend Method for the allocation strategy to Demand Forecast.</li>
+        </ol>
+        <h2>New user rights</h2>
+        <p>The following allocation-related user rights are now available.</p>
+        <h3>Right Group: Allocation</h3>
+        <table class="TableStyle-jeTables" cellspacing="0" style="mc-table-style: url('../../Resources/TableStyles/jeTables.css');width: 100%;">
+            <col class="TableStyle-jeTables-Column-Column1" />
+            <col class="TableStyle-jeTables-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-jeTables-Head-Header1">
+                    <th class="TableStyle-jeTables-HeadE-Column1-Header1">
+                        <p style="margin-bottom: 0pt;font-weight: bold;color: #FFFFFF;">Right Name</p>
+                    </th>
+                    <th class="TableStyle-jeTables-HeadD-Column1-Header1">
+                        <p style="margin-bottom: 0pt;font-weight: bold;color: #FFFFFF;">Location Controlled</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">Access to Allocations Module</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1">Manage &gt; Allocations</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">Access to PID RE-Trend Method</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2"><a href="../Allocations/Allocation Strategy_1.htm">Allocation Strategy</a> &gt; Re-Trend Method column &gt; <b>PID</b>&#160;value</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body1">Access to Monte Carlo Re-Trend Method</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body1" style="font-weight: normal;"><a href="../Allocations/Allocation Strategy_1.htm">Allocation Strategy</a>&gt; Re-Trend Method column &gt; <b>Monte Carlo </b>value</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body2">
+                    <td class="TableStyle-jeTables-BodyE-Column1-Body2">Access to Statistical Forecast Re-Trend Method</td>
+                    <td class="TableStyle-jeTables-BodyD-Column1-Body2"><a href="../Allocations/Allocation Strategy_1.htm">Allocation Strategy</a> &gt; Re-Trend Method column &gt; <b>Demand Forecasting</b> value</td>
+                </tr>
+                <tr class="TableStyle-jeTables-Body-Body1">
+                    <td class="TableStyle-jeTables-BodyB-Column1-Body1">Access to All Private Allocation Entities</td>
+                    <td class="TableStyle-jeTables-BodyA-Column1-Body1">Allows a user to view and edit the private (not shared) objects of other users in the Allocation module.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

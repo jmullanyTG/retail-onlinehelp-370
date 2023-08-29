@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UrlList>
+    <Url Source="Resources/Images/Matrix.png" />
+    <Url Source="Resources/Images/Demand Transfer/SEFH.png" />
+    <Url Source="Resources/Images/Demand Transfer/SHFE.png" />
+    <Url Source="Resources/Images/Demand Transfer/SHFH.png" />
+    <Url Source="Resources/Images/autolock1.JPG" />
+    <Url Source="Resources/Images/month sales6.JPG" />
+    <Url Source="Resources/Images/month sales4.JPG" />
+    <Url Source="Resources/Images/MFP/auto lock example 2.png" />
+    <Url Source="Resources/Images/month sales2.JPG" />
+    <Url Source="Resources/Images/MFP/auto lock example 1.png" />
+    <Url Source="Resources/Images/MFP/auto lock on cell change.png" />
+    <Url Source="Resources/Images/MFP/drag tab.png" />
+    <Url Source="Resources/Images/MFP/Docked side-by-side.png" />
+    <Url Source="Resources/Images/MFP/layout example.png" />
+    <Url Source="Resources/Images/MFP/data layout example.png" />
+    <Url Source="Resources/Images/MFP/workspace example.png" />
+    <Url Source="Resources/Images/MFP/hybrid finanical planning grid.png" />
+    <Url Source="Resources/Images/MFP/Row colors.png" />
+    <Url Source="Resources/Images/MFP/gradient comp.png" />
+    <Url Source="Resources/Images/MFP/gradient red.png" />
+</UrlList>

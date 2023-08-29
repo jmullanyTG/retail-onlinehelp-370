@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PageStyles MadCap:conditions="General.Printed Manuals" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <Page Name="Normal" Width="800" Height="800" Padding="1in" PageSize="Letter" PaddingLeft="1in" PaddingRight="1in" PaddingTop="1in" PaddingBottom="1in">
+        <Frame Flow="header" Height="0.5in" Right="0px" X="0px" Y="-0.75in" ColumnCount="1" Width="6.5in" Bottom="888px" TextAlign="left" VerticalAlign="middle" Anchors="" BorderBottomStyle="solid" BorderBottomWidth="1px" BorderBottomColor="#696969">
+            <Content>
+                <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:body>
+                        <xhtml:p xhtml:class="Header-Footer-Text">
+                            <xhtml:img xhtml:src="../Images/Assets/je_icon.png" /><xhtml:span xhtml:style="font-family: Calibri;"> JustEnough </xhtml:span><MadCap:variable xhtml:name="JustEnough Variables.JE&#160;Version" xhtml:style="font-size: 10pt;font-style: italic;font-family: Calibri;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /><xhtml:span xhtml:style="font-family: Calibri;"> — </xhtml:span><MadCap:variable xhtml:name="JustEnough Variables.Printed Manual Title" xhtml:style="font-family: Calibri;" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /><xhtml:span xhtml:style="font-family: Calibri;"> Documentation</xhtml:span>
+                        </xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="footer" Height="0.5in" Right="0px" Bottom="-72px" X="0px" Y="9.25in" Width="6.5in" TextAlign="right" VerticalAlign="middle" Anchors="" BorderTopStyle="solid" BorderTopWidth="1px" BorderTopColor="#696969">
+            <Content>
+                <xhtml:html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:p xhtml:style="text-align:center;">- <MadCap:variable xhtml:name="System.PageNumber" /> -</xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="body" ColumnCount="1" ColumnGap="0.25in" ColumnDivider="Solid 1pt Black" Width="6.5in" Height="9in" X="0px" Y="0px" Right="0px" Bottom="0px">
+        </Frame>
+    </Page>
+</PageStyles>

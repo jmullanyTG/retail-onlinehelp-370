@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Demand Transfer/Demand Transfer Overview.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+  <TocEntry
+    Title="Split Factor Method Overview"
+    Link="/Content/Demand Transfer/Split Factor Method Overview.htm" />
+  <TocEntry
+    Title="Demand Transfer Configuration"
+    Link="/Content/Demand Transfer/Demand Transfer Configuration.htm" />
+  <TocEntry
+    Title="Setting the Consider Demand Transference Option for an Item"
+    Link="/Content/Demand Transfer/Setting the Consider Demand.htm" />
+</CatapultToc>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Merchandise Financial Planning</h1>
+        <p>The following enhancements are now available in the Financial Planning module. </p>
+        <h2>Floating and docking of views</h2>
+        <p>You can customize your workspace by dragging any tab (such as Main Planning, Sales By Type, and Comp/Non-Comp Sales) or side-panel (such as Calculation Toggles or Endpoint) and dropping it wherever makes sense for the tasks you are performing:</p>
+        <ul>
+            <li style="font-weight: normal;">
+                <p><b>Docked at the top/bottom/side of the window</b>. When you drag a tab or panel header, semi-transparent docking helpers appear on the screen. Simply drop the tab/header on a helper to dock it in that helper's location.  (The area where the tab/header will be docked is highlighted in blue when you hover over a docking helper.) </p>
+                <p>
+                    <img src="../../Resources/Images/MFP/docking helper.png" /> </p>
+            </li>
+            <li style="font-weight: bold;">
+                <p>As a tab<span style="font-weight: normal;">. Dropping a tab/panel header next to an existing tab adds it as another tab in that pane. </span></p>
+                <p>
+                    <img src="../../Resources/Images/MFP/drag tab.png" />
+                </p>
+            </li>
+            <li style="font-weight: normal;"><b>On another screen</b>. Simply drag a tab or panel header outside of the JustEnough window and float it wherever your prefer.</li>
+        </ul>
+        <p style="font-weight: normal;">JustEnough keeps all these areas in synch no matter where they are positioned, so when you change data in one tab, the effects are immediately visible in the other areas.</p>
+        <p style="font-weight: normal;">You can save and restore screen configurations using MFP's existing <a href="../Merchandise Financial Planning/Essential Business Concepts_2.htm#Saving/R">save/restore workspace feature</a>.</p>
+        <h2>DC stock splitting is now based on a plan's supply chain</h2>
+        <p>The logic related to how MFP splits stock among DCs has been improved. Now, MPF uses the plan's supply chain to determine how stock should be split among DCs, as described below.</p>
+        <p>Units owned by sites of type DC are rolled into the last actualized period of the active plan and considered part of total inventory ownership by product/channel hierarchy level. Within each product hierarchy level, available DC stock is split among all relevant site hierarchy levels based on the supply chain defined for the plan. (The supply chain defines which DCs are sources for which sites. By analyzing the supply chain, JustEnough can "smartly" apportion units to each DC according to the anticipated need of the sites they source.)</p>
+        <p> If a plan's supply chain is missing or invalid, stock is split "generically" among DCs instead (see <a href="#Generic">Generic Stock Splits</a> below). In such cases, the following warning appears when you open the plan.</p>
+        <p>
+            <img src="../../Resources/Images/MFP/Invalid supply chain warning.png" />
+        </p>
+        <p>You can view the supply chain selected for a plan (as well as its status) in the Financial Plan Maintenance window.(Click <b>Manage</b> on the Financial Planning toolbar and then select the plan. The <b>Stock Split Supply Chain</b> and <b>Supply Chain Status </b>fields appear in the <b>Settings</b> tab. From there, you can also click <b>Edit</b> to choose a supply chain, <a href="../Merchandise Financial Planning/Validating a Supply Chain.htm">validate</a> it, and view any validation errors detected in the supply chain.)</p>
+        <p><b>Notes</b>:</p>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li class="ListParagraph" style="list-style-type: disc;">In order for DC stock splitting to occur, the DCs containing the stock you want split <b>must be </b><b>included</b> in the master plan.</li>
+            <li class="ListParagraph" style="list-style-type: disc;">Sites in the supply chain must have a DC as their primary source. <a href="../Supply Chain/Supply Chain Overview.htm#Supply">Supply chain overrides</a> are permitted as long as the overriding source is also a DC.</li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li class="ListParagraph" style="list-style-type: disc;">Stock in DCs that are part of enabled channel levels of the plan will show as part of the stock on hand for those channels; <span style="color: #0070C0;">this is recommended for cases where there is a 1-1 mapping between channels and DCs and stock from a single DC will not be shared among multiple channels</span></li>
+            <li class="ListParagraph" style="list-style-type: disc;">DC stock split quantities can be viewed in the Main Planning view in the fields <span style="font-weight: bold;">Actual EOP Units Cluster </span>(if the <span style="font-weight: bold;">Inventory Is Shared </span>policy is set to False) and <span style="font-weight: bold;">Actual EOP Units DC Split</span> for reference</li>
+        </ul>
+        <ul style="list-style-type: circle;margin-left: 72pt;">
+            <li class="ListParagraph" style="list-style-type: circle;"><span style="font-weight: bold;font-style: italic;">Note: </span><span style="font-style: italic;">the </span><span style="font-weight: bold;font-style: italic;">Inventory Is Shared </span><span style="font-style: italic;">system policy is used only for legacy Cost based plans to share incoming inventory among the site levels and </span><span style="font-weight: bold;font-style: italic;">is not used in Hybrid based plans</span>
+            </li>
+        </ul>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li class="ListParagraph" style="list-style-type: disc;">DC stock is stored against the Master plan and split from there, ensuring that stock is not double-counted in branch plans beneath</li>
+            <li class="ListParagraph" style="list-style-type: disc;">DC stock splits are recalculated dynamically, either when daily maintenance procedures run, or when changes to Sales Units and/or Receipt Units are made to any periods specified by the system policy and Save is clicked</li>
+            <li class="ListParagraph" style="list-style-type: disc;">Because it is possible for multiple versions of branch plans for the same product/channel levels to exist (upside, downside, and flat scenario plans, for example), if all channels sharing the DC stock for a given product level are not present in a branch, the system will use the planned values from the channels present in the branch and the master plan values for the same periods for the channels not present in the branch to determine DC stock splits in each branch. This is because, if multiple branch versions exist, it is not possible for the system to determine which one to use in the calculation of relative need by channel.</li>
+            <li class="ListParagraph" style="list-style-type: disc;"><span style="font-weight: bold;font-style: italic;color: #FF0000;">I</span><span style="font-weight: bold;font-style: italic;color: #FF0000;">mportant:</span><span style="font-style: italic;"> in the case where multiple branch plans exist for the same product level but different channel levels, it is possible that DC stock splits for those branches will recalculate when branches are merged into the Master plan, necessitating review of the receipt plans in each branch</span>
+            </li>
+        </ul>
+        <ul style="list-style-type: circle;margin-left: 72pt;">
+            <li class="ListParagraph" style="list-style-type: circle;"><span style="font-weight: bold;font-style: italic;color: #0070C0;">Helpful Hint:</span><span style="font-style: italic;"> in this scenario, it is recommended to have a “master branch” containing all product and channel levels so that branches can be merged into it and reviewed/adjusted at aggregate levels prior to merging into the Master plan</span>
+            </li>
+        </ul>
+        <h4><a name="Generic"></a>Generic Stock Splits</h4>
+        <p>If a plan's supply chain is missing or invalid, the stock is split "generically" among DCs according to the following system policy:</p>
+        <ul style="list-style-type: disc;margin-left: 36pt;">
+            <li class="ListParagraph" style="list-style-type: disc;"><span style="font-weight: bold;">DC Stock Splits Future Number of Periods: </span>this policy sets the number of periods forward the system uses to calculate the ideal splitting of available inventory among relevant site hierarchy levels; default setting is 8.</li>
+        </ul>
+        <p>JustEnough calculates the relative need of each site hierarchy level by comparing the planned Sales Units for the number of periods specified in this policy against the planned Receipt Units for the same number of periods plus the last actualized period’s EOP Units. The system then splits available inventory among the relevant site hierarchy levels and adds the split quantities to the EOP Units of last actualized period for each and carries them forward into the BOP Units for the following period.</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>
